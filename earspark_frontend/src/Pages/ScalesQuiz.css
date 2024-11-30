@@ -1,0 +1,29 @@
+.quiz-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.option-button {
+    margin: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.correct {
+    background-color: green;
+    color: white;
+}
+
+.incorrect {
+    background-color: red;
+    color: white;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.next-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+}

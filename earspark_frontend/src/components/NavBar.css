@@ -1,0 +1,191 @@
+/* NavBar.css */
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Ensures navbar stays on top when scrolling */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Adjustments for navbar links */
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #666;
+}
+
+.search-container {
+    display: flex;
+}
+
+.search-input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #777;
+}
+
+/* Style for the Logout button */
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+/* Hover effect for the Logout button */
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Style the logout button when it's disabled */
+.logout-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        /* Stack the items vertically */
+        align-items: flex-start;
+        /* Align items to the start */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        /* Initially hide the nav links */
+        gap: 15px;
+        padding: 20px 0;
+        background-color: #333;
+        /* Background for mobile nav */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: block;
+        /* Show when toggled */
+    }
+
+    .nav-links a {
+        padding: 12px;
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid #555;
+    }
+
+    /* Hide the logo for mobile screens */
+    .logo {
+        margin-right: 0;
+    }
+
+    /* Add a hamburger icon */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Hamburger icon styles */
+    .hamburger .line {
+        background-color: white;
+        height: 3px;
+        width: 25px;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Tablet and larger screen responsiveness */
+@media (max-width: 1024px) {
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .navbar-container {
+        justify-content: space-between;
+    }
+}

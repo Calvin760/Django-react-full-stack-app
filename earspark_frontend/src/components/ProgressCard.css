@@ -1,0 +1,44 @@
+.progress-card {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.statistic {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    /* Adjust width as necessary */
+    margin: 1rem;
+    /* Space between cards */
+    transition: transform 0.2s;
+}
+
+.statistic:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    font-size: 2rem;
+    /* Adjust size as needed */
+    color: #00aaff;
+    margin-right: 1rem;
+}
+
+.info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.info p {
+    margin: 0;
+    color: #666;
+}

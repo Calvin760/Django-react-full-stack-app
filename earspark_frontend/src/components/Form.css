@@ -1,0 +1,167 @@
+/* General form container */
+.form-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Add subtle animation on load */
+.form-container:nth-child(1) {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title of the form (Login or Register) */
+.form-container h1 {
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Input fields */
+.form-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input field focus styles */
+.form-input:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Error message styling */
+.error-message {
+    color: #f44336;
+    background-color: #ffe6e6;
+    padding: 12px;
+    border: 1px solid #f44336;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Success message styling */
+.success-message {
+    color: #4caf50;
+    background-color: #e8f5e9;
+    padding: 12px;
+    border: 1px solid #4caf50;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Submit button */
+.form-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    font-weight: 600;
+}
+
+/* Submit button hover effect */
+.form-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Submit button active (on click) effect */
+.form-button:active {
+    transform: translateY(0);
+}
+
+/* Disabled state for the button */
+.form-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Password visibility toggle button */
+.password-toggle {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: #0056b3;
+}
+
+/* Styling for password input container */
+.password-container {
+    position: relative;
+}
+
+/* Auth link (Login / Register switch) */
+.auth-switch {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-switch a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.auth-switch a:hover {
+    color: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .form-container h1 {
+        font-size: 22px;
+    }
+
+    .form-input,
+    .form-button {
+        font-size: 16px;
+    }
+}

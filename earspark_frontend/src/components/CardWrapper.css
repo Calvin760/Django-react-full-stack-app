@@ -1,0 +1,34 @@
+/* Styles to center the card in the middle of the page */
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Make sure it takes up the full viewport height */
+    background-color: #f4f4f4;
+    /* Light background */
+    padding: 20px;
+    /* Optional padding around the entire page */
+}
+
+.card {
+    width: 100%;
+    max-width: 1200px;
+    /* Increase the max-width for a larger card */
+    min-height: 600px;
+    /* Make the card taller to create a more rectangular look */
+    padding: 30px;
+    /* Larger padding for content inside the card */
+    background-color: white;
+    /* Card background */
+    border-radius: 15px;
+    /* Slightly more rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    overflow-y: auto;
+    /* Ensure content scrolls if it's too tall */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content from top */
+}

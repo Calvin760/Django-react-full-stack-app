@@ -1,0 +1,51 @@
+.note-quiz {
+    text-align: center;
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.play-button,
+.repeat-button,
+.option-button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover,
+.repeat-button:hover,
+.option-button:hover {
+    background-color: #0056b3;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.option-button {
+    flex: 1 1 100px;
+    /* Flexbox for responsive buttons */
+    max-width: 150px;
+    /* Maximum width for buttons */
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}

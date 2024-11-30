@@ -1,0 +1,93 @@
+.exercise-card {
+    position: relative;
+    /* Set relative positioning for absolute positioning of pseudo-element */
+    background-color: #fff;
+    /* White background */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 1.5rem;
+    /* Inner padding */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    width: 30%;
+    /* Adjust width as necessary */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Smooth transitions */
+    display: flex;
+    /* Flexbox for layout */
+    flex-direction: column;
+    /* Stack content vertically */
+    align-items: center;
+    /* Center content */
+}
+
+.exercise-card::before {
+    content: '';
+    /* Necessary for pseudo-element */
+    position: absolute;
+    /* Position it absolutely within the card */
+    top: 0;
+    /* Align to the top */
+    left: 0;
+    /* Align to the left */
+    width: 8px;
+    /* Width of the color bar */
+    height: 100%;
+    /* Full height of the card */
+    background-color: #00aaff;
+    /* Your desired color */
+    border-top-left-radius: 8px;
+    /* Round the top left corner */
+    border-bottom-left-radius: 8px;
+    /* Round the bottom left corner */
+}
+
+.exercise-card:hover {
+    transform: scale(1.05);
+    /* Scale effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+.icon {
+    font-size: 2rem;
+    /* Icon size */
+    color: #00aaff;
+    /* Icon color */
+    margin-bottom: 0.5rem;
+    /* Space below icon */
+}
+
+h3 {
+    margin: 0 0 0.5rem;
+    /* Space below heading */
+    color: #333;
+    /* Dark text color */
+    font-size: 1.5rem;
+    /* Adjust heading size */
+}
+
+p {
+    margin: 0.5rem 0;
+    /* Space between paragraphs */
+    color: #666;
+    /* Lighter text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .exercise-card {
+        width: 100%;
+        /* Full width on smaller screens */
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        /* Smaller font size for heading */
+    }
+
+    p {
+        font-size: 0.9rem;
+        /* Adjust paragraph font size */
+    }
+}
