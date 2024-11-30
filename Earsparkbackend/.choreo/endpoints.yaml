@@ -1,0 +1,8 @@
+version: 0.1  # Version should be defined as a string
+
+endpoints:
+  - name: "REST API"  # The name of the endpoint
+    port: 8000  # Port on which the API will be accessible
+    type: REST  # Specifies the type of API (REST)
+    networkvisibility: Public  # The visibility of the endpoint (Public)
+    context: /  # The base context for the endpoint (root in this case)
