@@ -1,41 +1,160 @@
+/* Piano container */
 .piano {
     display: flex;
     position: relative;
-    width: 600px;
-    /* Adjust width as needed */
-    height: 200px;
-    /* Adjust height as needed */
+    width: 100%;
+    /* Full width for responsiveness */
+    height: auto;
+    /* Let the height adjust based on width */
+    aspect-ratio: 6 / 2;
+    /* Maintain a 3:1 ratio for flexibility */
     background-color: #333;
+    /* Dark background for the piano */
     border: 2px solid #000;
+    /* Border for the piano */
+    margin: 0 auto;
+    /* Center the piano */
+    border-radius: 10px;
+    /* Optional: rounded corners for better aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow to give depth */
+    flex-wrap: nowrap;
+    /* Prevent keys from wrapping */
 }
 
+/* Piano container with scrolling for smaller devices */
+.piano-container {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    /* Ensures there's space at the bottom when scrolling */
+}
+
+/* White keys */
 .white-key {
     flex: 1;
+    /* Make each white key occupy equal space */
     background-color: white;
+    /* White color for the keys */
     border: 1px solid #000;
+    /* Black border for the keys */
     height: 100%;
+    /* Full height for the keys */
     position: relative;
     cursor: pointer;
     box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.2);
+    /* Slight inset shadow for depth */
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    /* Smooth transition */
 }
 
-.black-key {
-    width: 60px;
-    /* Adjust width as needed */
-    height: 120px;
-    /* Adjust height as needed */
-    background-color: black;
-    position: absolute;
-    left: 75%;
-    /* Adjust position for centering */
-    margin-left: -30px;
-    /* Center the black key */
-    z-index: 1;
-    cursor: pointer;
-}
-
-.white-key:hover,
-.black-key:hover
- {
+/* White key hover effect */
+.white-key:hover {
     opacity: 0.8;
+    /* Reduce opacity on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+/* Black keys */
+.black-key {
+    width: 8%;
+    /* Black keys are thinner (8% of the white key width) */
+    height: 120px;
+    /* Height for black keys */
+    background-color: black;
+    /* Black color */
+    position: absolute;
+    z-index: 1;
+    /* Ensure black keys are on top */
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    /* Smooth transition */
+}
+
+/* Black key hover effect */
+.black-key:hover {
+    opacity: 0.8;
+    /* Reduce opacity on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+/* Positioning of black keys */
+.black-key:nth-child(2) {
+    left: 90%;
+    /* Adjust for the first black key */
+}
+
+.black-key:nth-child(3) {
+    left: 175%;
+    /* Adjust for the second black key */
+}
+
+.black-key:nth-child(4) {
+    left: 260%;
+    /* Adjust for the third black key */
+}
+
+.black-key:nth-child(5) {
+    left: 345%;
+    /* Adjust for the fourth black key */
+}
+
+.black-key:nth-child(6) {
+    left: 450%;
+    /* Adjust for the fifth black key */
+}
+
+/* Responsiveness for tablets */
+@media (max-width: 768px) {
+    .piano-container {
+        overflow-x: auto;
+        /* Allow scrolling on smaller screens */
+        padding-bottom: 20px;
+    }
+
+    .piano {
+        width: 150%;
+        /* Allow the piano to be wider than the screen to enable scrolling */
+        height: auto;
+        /* Allow the height to scale according to the width */
+    }
+
+    .white-key {
+        height: 80%;
+        /* Decrease height for white keys */
+    }
+
+    .black-key {
+        height: 100px;
+        /* Decrease height for black keys */
+    }
+}
+
+/* Further adjustments for smaller screens (like phones) */
+@media (max-width: 480px) {
+    .piano-container {
+        overflow-x: scroll;
+        /* Ensure horizontal scrolling is enabled on phones */
+        padding-bottom: 15px;
+    }
+
+    .piano {
+        width: 300%;
+        /* Make the piano even larger on mobile for better scrollability */
+        height: auto;
+        /* Allow height to scale based on the width */
+    }
+
+    .white-key {
+        height: 60%;
+        /* Decrease height for white keys on smaller screens */
+    }
+
+    .black-key {
+        height: 80px;
+        /* Further decrease height for black keys on phones */
+    }
 }

@@ -1,6 +1,8 @@
+/* Default styles for larger screens */
 .progress-card {
     display: flex;
     justify-content: space-around;
+    /* Distribute cards evenly */
     padding: 2rem;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -17,7 +19,6 @@
     width: 30%;
     /* Adjust width as necessary */
     margin: 1rem;
-    /* Space between cards */
     transition: transform 0.2s;
 }
 
@@ -41,4 +42,68 @@
 .info p {
     margin: 0;
     color: #666;
+}
+
+/* Mobile-first styles */
+@media (max-width: 768px) {
+    .progress-card {
+        flex-direction: column;
+        /* Stack cards vertically */
+        align-items: center;
+        /* Center content */
+        padding: 1rem;
+        /* Reduce padding for smaller screens */
+    }
+
+    .statistic {
+        width: 80%;
+        /* Increase width to make use of available space */
+        margin: 0.5rem 0;
+        /* Reduce margin and space between cards */
+    }
+
+    .icon {
+        font-size: 1.5rem;
+        /* Smaller icon size for mobile */
+    }
+
+    .info h2 {
+        font-size: 1.3rem;
+        /* Smaller font size for heading */
+    }
+
+    .info p {
+        font-size: 0.9rem;
+        /* Slightly smaller font size for paragraph */
+    }
+}
+
+/* Further adjustments for very small screens (like phones) */
+@media (max-width: 480px) {
+    .progress-card {
+        padding: 0.5rem;
+        /* Even smaller padding */
+    }
+
+    .statistic {
+        width: 100%;
+        /* Full width for smaller screens */
+        margin: 0.5rem 0;
+        /* Ensure there’s space between cards */
+    }
+
+    .icon {
+        font-size: 1.25rem;
+        /* Further reduce icon size */
+    }
+
+    .info h2 {
+        font-size: 1.2rem;
+        /* Adjust heading font size for small screens */
+    }
+
+    .info p {
+        font-size: 0.85rem;
+        /* Further reduce paragraph font size */
+    }
 }

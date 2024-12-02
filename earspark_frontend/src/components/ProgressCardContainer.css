@@ -1,3 +1,4 @@
+/* Default styles for larger screens */
 .info-card-container {
     display: flex;
     justify-content: center;
@@ -26,4 +27,36 @@ h2 {
     /* Space below heading */
     color: #333;
     /* Dark text */
+}
+
+/* Mobile-first styles */
+@media (max-width: 768px) {
+    .info-card-container {
+        flex-direction: column;
+        /* Stack cards vertically */
+        gap: 1rem;
+        /* Reduce space between cards */
+        padding: 1rem;
+        /* Reduce padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        /* Adjust font size for smaller screens */
+        margin-bottom: 0.5rem;
+        /* Reduce margin for heading */
+    }
+}
+
+/* Further adjustments for very small screens (like phones) */
+@media (max-width: 480px) {
+    .info-card-container {
+        padding: 0.5rem;
+        /* Even smaller padding */
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        /* Further reduce heading font size */
+    }
 }

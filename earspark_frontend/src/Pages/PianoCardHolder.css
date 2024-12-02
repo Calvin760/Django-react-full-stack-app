@@ -1,3 +1,4 @@
+/* Default styles for larger screens */
 .piano-card-holder {
     width: 650px;
     /* Adjust the width to fit the piano */
@@ -22,4 +23,36 @@
     display: flex;
     justify-content: center;
     /* Center the piano */
+}
+
+/* Mobile-first styles */
+@media (max-width: 768px) {
+    .piano-card-holder {
+        width: 90%;
+        /* Use 90% of the screen width for tablets and smaller screens */
+        padding: 15px;
+        /* Adjust padding for better spacing */
+    }
+
+    .piano-container {
+        flex-direction: column;
+        /* Stack elements vertically on smaller screens */
+        margin-top: 15px;
+        /* Add more space above the piano */
+    }
+}
+
+/* Further adjustments for very small screens (like phones) */
+@media (max-width: 480px) {
+    .piano-card-holder {
+        width: 95%;
+        /* Use 95% of the screen width on very small screens */
+        padding: 10px;
+        /* Reduce padding for small screens */
+    }
+
+    .piano-container {
+        flex-direction: column;
+        /* Ensure the piano container stacks on smaller screens */
+    }
 }

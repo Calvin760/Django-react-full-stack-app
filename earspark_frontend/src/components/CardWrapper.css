@@ -2,33 +2,92 @@
 .card-wrapper {
     display: flex;
     justify-content: center;
+    /* Center horizontally */
     align-items: center;
+    /* Center vertically */
     min-height: 100vh;
-    /* Make sure it takes up the full viewport height */
+    /* Full viewport height */
     background-color: #f4f4f4;
     /* Light background */
     padding: 20px;
-    /* Optional padding around the entire page */
+    /* Optional padding around the page */
+    box-sizing: border-box;
+    /* Include padding in total width/height calculation */
 }
 
+/* Main card styles */
 .card {
     width: 100%;
+    /* Ensure card takes full width within its container */
     max-width: 1200px;
-    /* Increase the max-width for a larger card */
+    /* Card can expand to 1200px */
     min-height: 600px;
-    /* Make the card taller to create a more rectangular look */
+    /* Ensure card has enough height */
     padding: 30px;
-    /* Larger padding for content inside the card */
+    /* Adequate padding around the content */
     background-color: white;
-    /* Card background */
+    /* White background for the card */
     border-radius: 15px;
-    /* Slightly more rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow */
+    /* Slightly rounded corners for a soft look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Subtle but larger shadow */
     overflow-y: auto;
-    /* Ensure content scrolls if it's too tall */
+    /* Allow scrolling if content overflows */
     display: flex;
     flex-direction: column;
+    /* Stack content vertically */
     justify-content: flex-start;
-    /* Align content from top */
+    /* Align content from the top */
+    box-sizing: border-box;
+    /* Include padding in the width/height calculation */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Smooth hover effects */
+}
+
+/* Hover effect for the card */
+.card:hover {
+    transform: scale(1.02);
+    /* Slight zoom-in effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Slightly stronger shadow */
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        max-width: 90%;
+        /* Use 90% of screen width on tablets */
+        padding: 20px;
+        /* Reduce padding for smaller screens */
+        min-height: 500px;
+        /* Slightly smaller height on tablets */
+    }
+
+    /* Reduce box-shadow and hover effect for smaller screens */
+    .card:hover {
+        transform: scale(1.01);
+        /* More subtle hover effect */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        /* Less intense shadow */
+    }
+}
+
+/* Further adjustments for very small screens (like phones) */
+@media (max-width: 480px) {
+    .card {
+        max-width: 100%;
+        /* Full width for small screens */
+        padding: 15px;
+        /* Reduce padding for smaller devices */
+        min-height: 400px;
+        /* Reduce the minimum height for phones */
+    }
+
+    /* Further reduce hover effect on very small screens */
+    .card:hover {
+        transform: scale(1);
+        /* No zoom effect on small screens */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow */
+    }
 }
